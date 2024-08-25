@@ -1,5 +1,10 @@
 development:
-  adapter: async
+  # Use redis adapter on all environments because ActionCable doesn't work with async adapter.
+  # docker run --name development-redis -d -p 6379:6379 redis
+  # https://github.com/rails/rails/issues/36697
+  adapter: redis
+  url: <%= ENV.fetch("RAILS_REDIS_URL") { "redis://localhost:6379/1" } %>
+  channel_prefix: boilerplate_development
 
 test:
   adapter: test
