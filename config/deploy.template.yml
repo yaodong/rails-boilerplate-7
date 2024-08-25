@@ -6,7 +6,13 @@ image: user/my-app
 
 # Deploy to these servers.
 servers:
-  - 192.168.0.1
+  web:
+    hosts:
+      - 192.168.0.1
+  worker:
+    cmd: "bundle exec rake solid_queue:start"
+    hosts:
+      - 192.168.0.1
 
 # Credentials for your image host.
 registry:

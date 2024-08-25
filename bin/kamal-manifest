@@ -14,5 +14,6 @@ hosts = File.readlines(HOST_FILE).map(&:strip).reject(&:empty?)
 
 data = YAML.load_file(TEMPLATE_FILE)
 data["servers"]["web"]["hosts"] = hosts
+data["servers"]["worker"]["hosts"] = hosts
 
 File.open(CONFIG_FILE, 'w') { |f| f.write data.to_yaml }
