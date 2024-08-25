@@ -48,6 +48,9 @@ group :development, :test do
 
   # Git hooks to run linters and formatters
   gem "overcommit", "~> 0.64.0"
+
+  # Kamal for deploying to production
+  gem "kamal", "~> 1.8"
 end
 
 group :development do

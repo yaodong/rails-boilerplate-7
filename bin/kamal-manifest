@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+require 'yaml'
+
+HOST_FILE = 'config/hosts.txt'
+TEMPLATE_FILE = 'config/deploy.template.yml'
+CONFIG_FILE = 'config/deploy.yml'
+
+# /config/hosts.txt file must be generated before running this script
+unless File.exist?(HOST_FILE)
+  raise "config/hosts.txt not found"
+end
+
+hosts = File.readlines(HOST_FILE).map(&:strip).reject(&:empty?)
+
+data = YAML.load_file(TEMPLATE_FILE)
+data["servers"]["web"]["hosts"] = hosts
+
+File.open(CONFIG_FILE, 'w') { |f| f.write data.to_yaml }
