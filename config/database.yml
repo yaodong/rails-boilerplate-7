@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: boilerplate_production
-  username: boilerplate
-  password: <%= ENV["BOILERPLATE_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
