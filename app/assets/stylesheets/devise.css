@@ -1,0 +1,48 @@
+.devise {
+  @apply h-screen w-full bg-gray-100 flex justify-center items-center;
+}
+
+.devise__container {
+  @apply bg-white grow border border-gray-300 shadow rounded-none sm:rounded-lg p-6 w-full sm:max-w-96 mx-auto;
+}
+
+.devise__title {
+  @apply text-2xl font-light mb-5;
+}
+
+.devise__links {
+  @apply text-sm font-light;
+}
+
+.devise__links li a {
+  @apply text-gray-700 hover:text-black;
+}
+
+.devise__field {
+  @apply mb-5;
+}
+
+.devise__field label {
+  @apply block text-sm font-medium leading-6 text-gray-700;
+}
+
+.devise__field input {
+  @apply block w-full rounded p-1 text-gray-700;
+}
+
+.devise__checkbox {
+  @apply flex items-center text-gray-700 mb-5;
+}
+
+.devise__checkbox input[type="checkbox"] {
+  @apply mr-2 h-4 w-4 rounded
+}
+
+.devise__actions {
+  @apply mb-5;
+}
+
+.devise__actions input[type="submit"] {
+  @apply flex w-full justify-center rounded p-2 text-sm leading-6 text-white shadow-sm;
+  @apply bg-gray-800 hover:bg-black cursor-pointer;
+}

@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+
+  *:focus-visible {
+    outline-color: theme('colors.gray.500');
+  }
+
+  [type='text']:focus,
+  input:where(:not([type])):focus,
+  [type='email']:focus,
+  [type='url']:focus,
+  [type='password']:focus,
+  [type='number']:focus,
+  [type='date']:focus,
+  [type='datetime-local']:focus,
+  [type='month']:focus,
+  [type='search']:focus,
+  [type='tel']:focus,
+  [type='time']:focus,
+  [type='week']:focus,
+  [type='submit']:focus,
+  [type="checkbox"]:focus,
+  [multiple]:focus,
+  textarea:focus,
+  select:focus {
+    --tw-ring-color: theme('colors.gray.500');
+    border-color: var(--tw-ring-color);
+  }
+
+  [type='submit']:focus-visible {
+    outline-offset: 2px;
+  }
+
+  [type="checkbox"]:checked {
+    background-color: theme('colors.gray.500') !important;
+  }
+}
