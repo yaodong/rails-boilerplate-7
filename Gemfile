@@ -34,13 +34,19 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.13"
 
 # Run background jobs
 gem "solid_queue", "~> 0.6.0"
 
 # User authentication
 gem "devise", "~> 4.9"
+
+# Send emails
+gem "postmark-rails", "~> 0.22.1"
+
+# Upload files to S3-compatible services
+gem "aws-sdk-s3", "~> 1.159"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
