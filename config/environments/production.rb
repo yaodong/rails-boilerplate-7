@@ -37,7 +37,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = "X-Accel-Redirect" # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = ENV.fetch("ACTIVE_STORAGE_SERVICE", :digitalocean)
+  config.active_storage.service = Rails.application.credentials.dig(:active_storage, :service) || :local
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
@@ -79,7 +79,9 @@ Rails.application.configure do
 
   # Use Postmark to send emails
   config.action_mailer.delivery_method = :postmark
-  config.action_mailer.postmark_settings = { api_token: ENV.fetch("POSTMARK_API_TOKEN", nil) }
+  config.action_mailer.postmark_settings = {
+    api_token: Rails.application.credentials.dig(:postmark, :api_token)
+  }
 
   # Disable caching for Action Mailer templates even if Action Controller
   # caching is enabled.

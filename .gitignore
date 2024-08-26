@@ -42,3 +42,7 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
+# Ignore development credentials because this is a boilerplate project
+/config/credentials/development.key
+/config/credentials/development.yml.enc
