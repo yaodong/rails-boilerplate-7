@@ -37,7 +37,7 @@ gem "bootsnap", require: false
 gem "image_processing", "~> 1.13"
 
 # Run background jobs
-gem "solid_queue", "~> 0.6.0"
+gem "solid_queue", "~> 0.6.1"
 
 # User authentication
 gem "devise", "~> 4.9"
