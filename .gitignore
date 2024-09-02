@@ -46,3 +46,7 @@
 # Ignore development credentials because this is a boilerplate project
 /config/credentials/development.key
 /config/credentials/development.yml.enc
+
+# Ignore editor config files
+.idea/
+.vscode/
