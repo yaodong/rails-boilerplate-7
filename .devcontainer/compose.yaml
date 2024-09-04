@@ -43,6 +43,16 @@ services:
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: postgres
 
+#  outpost-example:
+#    build:
+#      context: ../outposts/example
+#      dockerfile: Dockerfile.dev
+#    restart: unless-stopped
+#    ports:
+#    - "3000:3000"
+#    volumes:
+#    - ../outposts/example:/app:cached
+
 volumes:
   redis-data:
   postgres-data:

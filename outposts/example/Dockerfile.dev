@@ -1,0 +1,16 @@
+FROM oven/bun:latest
+
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y tini && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+WORKDIR /app
+
+COPY package.json bun.lockb ./
+
+RUN bun install
+
+EXPOSE 3000/tcp
+
+ENTRYPOINT ["/usr/bin/tini", "--"]
+CMD ["bun", "run", "dev"]
