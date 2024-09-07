@@ -10,7 +10,7 @@ servers:
     hosts:
       - 192.168.0.1
   worker:
-    cmd: "bundle exec rake solid_queue:start"
+    cmd: "bin/jobs"
     hosts:
       - 192.168.0.1
 

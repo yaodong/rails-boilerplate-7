@@ -60,7 +60,8 @@ jobs:
           # Runtime secrets
           RAILS_ENV: production
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
-          DATABASE_URL: ${{ secrets.RAILS_DATABASE_URL }}
+          RAILS_PRIMARY_DATABASE_URL: ${{ secrets.RAILS_PRIMARY_DATABASE_URL }}
+          RAILS_QUEUE_DATABASE_URL: ${{ secrets.RAILS_QUEUE_DATABASE_URL }}
           REDIS_URL: ${{ secrets.RAILS_REDIS_URL }}
           POSTMARK_API_TOKEN: ${{ secrets.POSTMARK_API_TOKEN }}
         run: bundle exec kamal setup

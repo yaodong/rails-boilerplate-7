@@ -74,8 +74,9 @@ Rails.application.configure do
   # Use a different cache store in production.
   config.cache_store = :redis_cache_store, { url: ENV["REDIS_URL"] }
 
-  # Use a real queuing backend for Active Job (and separate queues per environment).
+  # Use Solid Queue for Active Job adapter.
   config.active_job.queue_adapter = :solid_queue
+  config.solid_queue.connects_to = { database: { writing: :queue } }
 
   # Use Postmark to send emails
   config.action_mailer.delivery_method = :postmark
