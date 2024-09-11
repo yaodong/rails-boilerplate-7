@@ -46,7 +46,7 @@ gem "devise", "~> 4.9"
 gem "postmark-rails", "~> 0.22.1"
 
 # Upload files to S3-compatible services
-gem "aws-sdk-s3", "~> 1.159"
+gem "aws-sdk-s3", "~> 1.162"
 
 # Sentry gems
 gem "stackprof"
