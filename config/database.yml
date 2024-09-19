@@ -12,7 +12,7 @@
 # Configure Using Gemfile
 # gem "pg"
 #
-default: &default
+base: &base
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
@@ -24,15 +24,13 @@ default: &default
   password: postgres
   <% end %>
 
-common:
+default:
   primary: &default_primary
-    <<: *default
-    migrations_paths: db/migrate/primary
-    schema_dump: schema/primary.rb
+    <<: *base
   queue: &default_queue
-    <<: *default
-    migrations_paths: db/migrate/queue
-    schema_dump: schema/queue.rb
+    <<: *base
+    migrations_paths: db/migrate_queue
+    schema_dump: schema_queue.rb
 
 development:
   primary:
