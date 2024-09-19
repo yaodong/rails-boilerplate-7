@@ -64,10 +64,10 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   # Git hooks to run linters and formatters
-  gem "overcommit", "~> 0.64.0"
+  gem "overcommit", "~> 0.64.0", require: false
 
   # Kamal for deploying to production
-  gem "kamal", "~> 1.8"
+  gem "kamal", "~> 1.8", require: false
 end
 
 group :development do
