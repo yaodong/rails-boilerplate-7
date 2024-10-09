@@ -67,7 +67,7 @@ group :development, :test do
   gem "overcommit", "~> 0.64.0", require: false
 
   # Kamal for deploying to production
-  gem "kamal", "~> 1.8", require: false
+  gem "kamal", "~> 2.2", require: false
 end
 
 group :development do
